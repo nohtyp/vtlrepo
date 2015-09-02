@@ -49,6 +49,8 @@ anchor {'vtlrepo::begin':} ->
   class {'::vtlrepo::package':} ->
   class {'::vtlrepo::file':} ->
   class {'::vtlrepo::cron':} ->
+  class {'::vtlrepo::directory':} ->
+  class {'::vtlrepo::create':} ->
 anchor {'vtlrepo::end':}
 
 }
