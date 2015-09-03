@@ -47,9 +47,10 @@ $httpd_dir        = $vtlrepo::params::httpd_dir,
 
 anchor {'vtlrepo::begin':} ->
   class {'::vtlrepo::package':} ->
+  class {'::vtlrepo::service':} ->
   class {'::vtlrepo::file':} ->
   class {'::vtlrepo::cron':} ->
-  class {'::vtlrepo::directory':} ->
+  class {'::vtlrepo::add_syncfile':} ->
+  class {'::vtlrepo::initial_sync':} ->
 anchor {'vtlrepo::end':}
-
 }
