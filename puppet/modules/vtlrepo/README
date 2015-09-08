@@ -14,3 +14,6 @@ Support
 -------
 
 Please log tickets and issues at our [Projects site](http://projects.example.com)
+
+Note:  This module will be reconfigured to use a smarter implementation.  It's currently
+       in a working state.
