@@ -6,6 +6,8 @@ REPOFILE='/root/.initialreposync'
 
 if [ -f $REPOFILE ]; then
   /bin/rm $REPOFILE
+else
+  /bin/touch $REPOFILE
 fi
 
 for i in $REPOS; do
@@ -14,5 +16,3 @@ for i in $REPOS; do
     /usr/bin/createrepo -q $HTTPDIR/$i
   fi
 done
-
-/bin/touch $REPOFILE
