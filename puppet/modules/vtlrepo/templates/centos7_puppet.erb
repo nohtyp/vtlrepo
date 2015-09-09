@@ -2,8 +2,8 @@
 ### This file is managed by Puppet.  Any changes will be overwritten
 ### within 30 minutes
 ##########################################################################
-[<%=@repo1['reponame']%>]
-name = <%= @repo1['name'] %>
-baseurl = <%= @repo1['baseurl'] %>
-enabled = <%= @repo1['enabled'] %>
-gpgcheck = <%= @repo1['gpgcheck'] %>
+[<%=@centos7_puppet["reponame"]%>]
+name = <%= @centos7_puppet['name'] %>
+baseurl = <%= @centos7_puppet['baseurl'] %>
+enabled = <%= @centos7_puppet['enabled'] %>
+gpgcheck = <%= @centos7_puppet['gpgcheck'] %>

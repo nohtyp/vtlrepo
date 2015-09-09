@@ -1,30 +1,27 @@
 class vtlrepo::file inherits vtlrepo {
 
-  file { "Repo1 config":
-    ensure   => file,
-    path     => "${yumrepo_dir}/${repo1['reponame']}.repo",
+  file { "CentOS 6 config directory":
+    ensure   => directory,
+    path     => '/etc/rh6.repos.d',
     owner    => 'root',
     group    => 'root',
-    mode     => 0644,
-    content  => template('vtlrepo/repo1.erb'),
+    mode     => 0755,
   }
 
-  file { "Repo2 config":
-    ensure   => file,
-    path     => "${yumrepo_dir}/${repo2['reponame']}.repo",
+  file { "CentOS 7 config directory":
+    ensure   => directory,
+    path     => '/etc/rh7.repos.d',
     owner    => 'root',
     group    => 'root',
-    mode     => 0644,
-    content  => template('vtlrepo/repo2.erb'),
+    mode     => 0755,
   }
 
-  file { "Repo3 config":
-    ensure   => file,
-    path     => "${yumrepo_dir}/${repo3['reponame']}.repo",
+  file { "CentOS noarch config directory":
+    ensure   => directory,
+    path     => '/etc/noarch.repos.d',
     owner    => 'root',
     group    => 'root',
-    mode     => 0644,
-    content  => template('vtlrepo/repo3.erb'),
+    mode     => 0755,
   }
 }
 

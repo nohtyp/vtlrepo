@@ -2,8 +2,8 @@
 ### This file is managed by Puppet.  Any changes will be overwritten
 ### within 30 minutes
 ##########################################################################
-[<%=@repo2['reponame']%>]
-name = <%= @repo2['name'] %>
-baseurl = <%= @repo2['baseurl'] %>
-enabled = <%= @repo2['enabled'] %>
-gpgcheck = <%= @repo2['gpgcheck'] %>
+[<%=@glusterfs_epel["reponame"]%>]
+name = <%= @glusterfs_epel['name'] %>
+baseurl = <%= @glusterfs_epel['baseurl'] %>
+enabled = <%= @glusterfs_epel['enabled'] %>
+gpgcheck = <%= @glusterfs_epel['gpgcheck'] %>
