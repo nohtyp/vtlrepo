@@ -2,32 +2,21 @@
 
 HTTPDIR='/var/www/html'
 REPOFILE='/root/.initialreposync'
+REPOCONF='rh6 rh7 noarch'
 
-NOARCH=`ls $HTTPDIR/noarch`
-RH6=`ls $HTTPDIR/rh6`
-RH7=`ls $HTTPDIR/rh7`
-REPOS="$NOARCH $RH6 $RH7"
+touch $REPOFILE
 
-for i in $REPOS;do
-  readlink -f $i
+for i in $REPOCONF;do
+  /bin/reposync -c /etc/$i.conf -p $HTTPDIR/$i
+  /bin/touch /root/.$i
 done
 
+for j in $REPOCONF;do
+  if [ -f /root/.$j ];then
+    NEWLIST=`find $HTTPDIR/$j -maxdepth 1 -not -path $HTTPDIR/$j`
+    for k in $NEWLIST;do
+      /bin/createrepo -q $k
+    done
+  fi
+done
 
-
-
-#function repocreate {
-#  /bin/reposync -p $HTTPDIR/
-#
-#if [ ! -f $REPOFILE ]; then
-#  /bin/touch $REPOFILE
-#fi
-#
-#
-#
-#for i in $REPOS; do
-#  if [ ! -d $HTTPDIR/$i ];then
-#    /bin/reposync -p $HTTPDIR --repoid=$i -l -q
-#    /bin/reposync -p $HTTPDIR/$i -c /etc/rh6.conf -l -q
-#    /usr/bin/createrepo -q $HTTPDIR/$i
-#  fi
-#done
