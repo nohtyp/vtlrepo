@@ -1,0 +1,9 @@
+########################################################################
+### This file is managed by Puppet.  Any changes will be overwritten
+### within 30 minutes
+##########################################################################
+[<%=@centos6_updates["reponame"]%>]
+name = <%= @centos6_updates['name'] %>
+baseurl = <%= @centos6_updates['baseurl'] %>
+enabled = <%= @centos6_updates['enabled'] %>
+gpgcheck = <%= @centos6_updates['gpgcheck'] %>

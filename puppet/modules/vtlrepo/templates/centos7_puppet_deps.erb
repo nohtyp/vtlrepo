@@ -1,0 +1,9 @@
+########################################################################
+### This file is managed by Puppet.  Any changes will be overwritten
+### within 30 minutes
+##########################################################################
+[<%=@centos7_puppet_deps["reponame"]%>]
+name = <%= @centos7_puppet_deps['name'] %>
+baseurl = <%= @centos7_puppet_deps['baseurl'] %>
+enabled = <%= @centos7_puppet_deps['enabled'] %>
+gpgcheck = <%= @centos7_puppet_deps['gpgcheck'] %>
