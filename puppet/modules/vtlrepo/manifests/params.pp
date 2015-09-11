@@ -33,7 +33,7 @@ $centos6_extras  = { 'reponame'       => 'centos6_extras',
 
 $centos6_puppet = { 'reponame'        => 'centos6_puppet',
                      'name'           => 'This is a centos6 puppet repo',
-                     'baseurl'        => 'http://yum.puppetlabs.com/el/6/products/x86_64/'
+                     'baseurl'        => 'http://yum.puppetlabs.com/el/6/products/x86_64/',
                      'enabled'        => '1',
                      'gpgcheck'       => '0',
                    }
