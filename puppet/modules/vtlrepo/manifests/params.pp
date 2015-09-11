@@ -261,17 +261,67 @@ $vtlrepocrons = { 'rh6reposync'  => {
                  'glusterfs-epel' =>  {
                                    'ensure'         => present,
                                    'name'           => 'noarch createrepo',
-                                   'command'        => '/bin/createrepo -q /var/www/html/noarch/glusterfs-epel',
+                                   'command'        => '/bin/createrepo -q /var/www/html/noarch/glusterfs_epel',
                                    'hour'           => '7',
                                    'minute'         => '*',
                                    'month'          => '*',
                                    'monthday'       => '*',
                                   },
 
+                 'centos6-base'   =>  {
+                                   'ensure'         => present,
+                                   'name'           => 'centos6-base createrepo',
+                                   'command'        => '/bin/createrepo -q /var/www/html/rh6/centos6_base',
+                                   'hour'           => '8',
+                                   'minute'         => '*',
+                                   'month'          => '*',
+                                   'monthday'       => '*',
+                                 },
+
+                 'centos6-extras' =>  {
+                                   'ensure'         => present,
+                                   'name'           => 'centos6-extras createrepo',
+                                   'command'        => '/bin/createrepo -q /var/www/html/rh6/centos6_extras',
+                                   'hour'           => '8',
+                                   'minute'         => '*',
+                                   'month'          => '*',
+                                   'monthday'       => '*',
+                                 },
+
+                 'centos6-puppet' =>  {
+                                   'ensure'         => present,
+                                   'name'           => 'centos6-puppet createrepo',
+                                   'command'        => '/bin/createrepo -q /var/www/html/rh6/centos6_puppet',
+                                   'hour'           => '8',
+                                   'minute'         => '*',
+                                   'month'          => '*',
+                                   'monthday'       => '*',
+                                 },
+
+                 'centos6-puppet-deps' =>  {
+                                   'ensure'         => present,
+                                   'name'           => 'centos6-puppet-deps createrepo',
+                                   'command'        => '/bin/createrepo -q /var/www/html/rh6/centos6_puppet_deps',
+                                   'hour'           => '8',
+                                   'minute'         => '*',
+                                   'month'          => '*',
+                                   'monthday'       => '*',
+                                 },
+
+                 'centos6-updates' =>  {
+                                   'ensure'         => present,
+                                   'name'           => 'centos6-updates createrepo',
+                                   'command'        => '/bin/createrepo -q /var/www/html/rh6/centos6_updates',
+                                   'hour'           => '8',
+                                   'minute'         => '*',
+                                   'month'          => '*',
+                                   'monthday'       => '*',
+                                 },
+
                  'centos6-epel'   =>  {
                                    'ensure'         => present,
                                    'name'           => 'centos6-epel createrepo',
-                                   'command'        => '/bin/createrepo -q /var/www/html/rh6/centos6-epel',
+                                   'command'        => '/bin/createrepo -q /var/www/html/rh6/centos6_epel',
                                    'hour'           => '8',
                                    'minute'         => '*',
                                    'month'          => '*',
@@ -281,7 +331,57 @@ $vtlrepocrons = { 'rh6reposync'  => {
                  'centos7-puppet' =>  {
                                    'ensure'         => present,
                                    'name'           => 'centos7-puppet createrepo',
-                                   'command'        => '/bin/createrepo -q /var/www/html/rh7/centos7-pupppet',
+                                   'command'        => '/bin/createrepo -q /var/www/html/rh7/centos7_pupppet',
+                                   'hour'           => '9',
+                                   'minute'         => '*',
+                                   'month'          => '*',
+                                   'monthday'       => '*',
+                                 },
+
+                 'centos7-puppet-deps' =>  {
+                                   'ensure'         => present,
+                                   'name'           => 'centos7-puppet-deps createrepo',
+                                   'command'        => '/bin/createrepo -q /var/www/html/rh7/centos7_pupppet_deps',
+                                   'hour'           => '9',
+                                   'minute'         => '*',
+                                   'month'          => '*',
+                                   'monthday'       => '*',
+                                 },
+
+                 'centos7-base'   =>  {
+                                   'ensure'         => present,
+                                   'name'           => 'centos7-base createrepo',
+                                   'command'        => '/bin/createrepo -q /var/www/html/rh7/centos7_base',
+                                   'hour'           => '8',
+                                   'minute'         => '*',
+                                   'month'          => '*',
+                                   'monthday'       => '*',
+                                 },
+
+                 'centos7-epel'   =>  {
+                                   'ensure'         => present,
+                                   'name'           => 'centos7-epel createrepo',
+                                   'command'        => '/bin/createrepo -q /var/www/html/rh7/centos7_epel',
+                                   'hour'           => '9',
+                                   'minute'         => '*',
+                                   'month'          => '*',
+                                   'monthday'       => '*',
+                                 },
+
+                 'centos7-extras' =>  {
+                                   'ensure'         => present,
+                                   'name'           => 'centos7-extras createrepo',
+                                   'command'        => '/bin/createrepo -q /var/www/html/rh7/centos7_extras',
+                                   'hour'           => '5',
+                                   'minute'         => '*',
+                                   'month'          => '*',
+                                   'monthday'       => '*',
+                                 },
+
+                 'centos7-updates' =>  {
+                                   'ensure'         => present,
+                                   'name'           => 'centos7-updates createrepo',
+                                   'command'        => '/bin/createrepo -q /var/www/html/rh7/centos7_updates',
                                    'hour'           => '9',
                                    'minute'         => '*',
                                    'month'          => '*',
