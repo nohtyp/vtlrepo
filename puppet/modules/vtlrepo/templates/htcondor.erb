@@ -1,0 +1,9 @@
+########################################################################
+### This file is managed by Puppet.  Any changes will be overwritten
+### within 30 minutes
+##########################################################################
+[<%=@htcondor["reponame"]%>]
+name = <%= @htcondor['name'] %>
+baseurl = <%= @htcondor['baseurl'] %>
+enabled = <%= @htcondor['enabled'] %>
+gpgcheck = <%= @htcondor['gpgcheck'] %>

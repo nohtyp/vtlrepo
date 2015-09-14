@@ -94,6 +94,28 @@ $centos7_updates = { 'reponame'       => 'centos7_updates',
                      'gpgcheck'       => '0',
                    }
 
+$elasticsearch   = { 'reponame'       => 'elasticsearch',
+                     'name'           => 'This is a elasticsearch repo',
+                     'baseurl'        => 'http://packages.elastic.co/elasticsearch/1.7/centos',
+                     'enabled'        => '1',
+                     'gpgcheck'       => '0',
+                   }
+
+$htcondor        = { 'reponame'       => 'htcondor',
+                     'name'           => 'This is a htcondor repo',
+                     'baseurl'        => 'http://research.cs.wisc.edu/htcondor/yum/stable/rhel7',
+                     'enabled'        => '1',
+                     'gpgcheck'       => '0',
+                   }
+
+$logstash        = { 'reponame'       => 'logstash',
+                     'name'           => 'This is a logstash repo',
+                     'baseurl'        => 'http://packages.elasticsearch.org/logstash/1.5/centos',
+                     'enabled'        => '1',
+                     'gpgcheck'       => '0',
+                   }
+
+
 $rh6conf         = { 'cachedir'       => '/var/cache/yum/repoync.rh6/$basearch/$releasever',
                      'keepcache'      => '0',
                      'debuglevel'     => '2',
@@ -205,6 +227,26 @@ $repos = { 'glusterfs-epel'   => {
                                    'path'           => '/etc/rh7.repos.d/centos7-updates.repo',
                                    'content'        => template('vtlrepo/centos7_updates.erb'),
                                 },
+
+           'elasticsearch'   => {
+                                   'ensure'         => present,
+                                   'path'           => '/etc/noarch.repos.d/elasticsearch.repo',
+                                   'content'        => template('vtlrepo/elasticsearch.erb'),
+                                },
+
+           'htcondor'        => {
+                                   'ensure'         => present,
+                                   'path'           => '/etc/rh7.repos.d/htcondor.repo',
+                                   'content'        => template('vtlrepo/htcondor.erb'),
+                                },
+
+           'logstash'        => {
+                                   'ensure'         => present,
+                                   'path'           => '/etc/noarch.repos.d/htcondor.repo',
+                                   'content'        => template('vtlrepo/logstash.erb'),
+                                },
+
+
 
     }
 
@@ -387,5 +429,35 @@ $vtlrepocrons = { 'rh6reposync'  => {
                                    'month'          => '*',
                                    'monthday'       => '*',
                                  },
+
+                 'elasticsearch'   =>  {
+                                   'ensure'         => present,
+                                   'name'           => 'elasticsearch createrepo',
+                                   'command'        => '/bin/createrepo -q /var/www/html/noarch/elasticsearch',
+                                   'hour'           => '7',
+                                   'minute'         => '*',
+                                   'month'          => '*',
+                                   'monthday'       => '*',
+                                  },
+
+                 'htcondor'       =>  {
+                                   'ensure'         => present,
+                                   'name'           => 'htcondor createrepo',
+                                   'command'        => '/bin/createrepo -q /var/www/html/rh7/htcondor',
+                                   'hour'           => '8',
+                                   'minute'         => '*',
+                                   'month'          => '*',
+                                   'monthday'       => '*',
+                                  },
+
+                 'logstash'       =>  {
+                                   'ensure'         => present,
+                                   'name'           => 'logstash createrepo',
+                                   'command'        => '/bin/createrepo -q /var/www/html/noarch/logstash',
+                                   'hour'           => '8',
+                                   'minute'         => '*',
+                                   'month'          => '*',
+                                   'monthday'       => '*',
+                                  },
                     }
 }

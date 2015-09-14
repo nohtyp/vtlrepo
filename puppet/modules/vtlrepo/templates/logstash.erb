@@ -1,0 +1,9 @@
+########################################################################
+### This file is managed by Puppet.  Any changes will be overwritten
+### within 30 minutes
+##########################################################################
+[<%=@logstash["reponame"]%>]
+name = <%= @logstash['name'] %>
+baseurl = <%= @logstash['baseurl'] %>
+enabled = <%= @logstash['enabled'] %>
+gpgcheck = <%= @logstash['gpgcheck'] %>

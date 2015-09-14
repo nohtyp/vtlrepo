@@ -1,0 +1,9 @@
+########################################################################
+### This file is managed by Puppet.  Any changes will be overwritten
+### within 30 minutes
+##########################################################################
+[<%=@elasticsearch["reponame"]%>]
+name = <%= @elasticsearch['name'] %>
+baseurl = <%= @elasticsearch['baseurl'] %>
+enabled = <%= @elasticsearch['enabled'] %>
+gpgcheck = <%= @elasticsearch['gpgcheck'] %>
